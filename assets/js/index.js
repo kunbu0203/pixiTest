@@ -49,23 +49,18 @@ loader.load(main);
 
 
 function main() {
+    var container = new PIXI.Container();
+
     var thing = new PIXI.Graphics();
-    thing.x = 300;
-    thing.y = 300;
-
     var thingBack = new PIXI.Graphics();
-    thingBack.x = 300;
-    thingBack.y = 300;
-
     var dot = new PIXI.Graphics();
-    dot.x = 300;
-    dot.y = 300;
-
     var dotBack = new PIXI.Graphics();
-    dotBack.x = 300;
-    dotBack.y = 300;
+    
+    container.x = 250;
+    container.y = 250;
 
-    mainContainer.addChild(thing, thingBack, dot, dotBack);
+    container.addChild(thing, thingBack, dot, dotBack);
+    mainContainer.addChild(container);
 
     var count = 0;
     gsap.ticker.add(function dotLine() {
